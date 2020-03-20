@@ -7,14 +7,12 @@ function start(response, postData) {
   
   const body = '<html>' +
     '<head>' +
-    '<meta http-equiv="Content-Type" content="text/html; ' + 
-    'charset=UTF-8 />' +
+    '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />' +
     '</head>' +
     '<body>' +
-    '<form action="/upload" enctype="multipart/form-data" '+
-    'method="post">' +
+    '<form action="/upload" enctype="multipart/form-data" method="post">' +
     '<input type="file" name="upload" multiple="multiple">' +
-    '<input type="submit" value="Upload file" />' +
+    '<input type="submit" value="Upload files" />' +
     '</form>' +
     '</body>' +
     '</html>';
@@ -25,7 +23,7 @@ function start(response, postData) {
 
 }
 
-function upload(response, postData) {
+function upload(response, request) {
   console.log("Request handler 'upload' was called.");
 
   const form = new formidable.IncomingForm();
